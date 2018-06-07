@@ -1,0 +1,101 @@
+HomeTeam,AwayTeam,Label,PreviousWeeksHomeFor,PreviousWeeksHomeAgainst,PreviousWeeksAwayFor,PreviousWeeksAwayAgainst,HomeTeamHomeForm,HomeTeamAwayForm,AwayTeamHomeForm,AwayTeamAwayForm,Round,HomeTeamLastWeekScore,AwayTeamLastWeekScore
+Dragons,Broncos,22,301,192,232,264,7,-1,2,0,1,0,0
+Knights,Sea Eagles,1,240,346,278,298,-1,0,0,-5,1,0,0
+Cowboys,Sharks,6,213,261,254,231,-3,-2,2,1,1,0,0
+Wests Tigers,Roosters,2,188,177,248,182,3,-1,2,0,1,0,0
+Rabbitohs,Warriors,-12,320,219,232,234,3,2,1,3,1,0,0
+Bulldogs,Storm,-18,183,238,265,189,0,-6,2,0,1,0,0
+Panthers,Eels,10,277,168,174,298,5,1,-2,-7,1,0,0
+Titans,Raiders,2,218,327,262,261,1,-5,1,-3,1,0,0
+Sharks,Dragons,-4,14,20,34,12,0,-1,1,0,2,-6,22
+Roosters,Bulldogs,18,8,10,18,36,0,-1,-1,0,2,-2,-18
+Broncos,Cowboys,4,12,34,20,14,0,-1,1,0,2,-22,6
+Warriors,Titans,12,32,20,30,28,0,1,1,0,2,12,2
+Panthers,Rabbitohs,4,24,14,20,32,1,0,-1,0,2,10,-12
+Storm,Wests Tigers,-2,36,18,10,8,0,1,1,0,2,18,2
+Sea Eagles,Eels,54,18,19,14,24,0,-1,0,-1,2,-1,-10
+Raiders,Knights,-2,28,30,19,18,0,-1,1,0,2,-2,1
+Storm,Cowboys,16,44,28,40,38,-1,1,1,-1,3,-2,-4
+Bulldogs,Panthers,2,30,66,42,28,-1,-1,2,0,3,-18,4
+Wests Tigers,Broncos,-2,20,16,36,54,1,1,1,-1,3,2,4
+Raiders,Warriors,-1,56,60,52,28,-1,-1,1,1,3,-2,12
+Rabbitohs,Sea Eagles,28,34,50,72,19,-1,-1,1,-1,3,-4,54
+Eels,Sharks,-10,14,78,30,40,0,-2,-1,-1,3,-54,-4
+Titans,Dragons,-46,38,48,54,28,1,-1,1,1,3,-12,4
+Roosters,Knights,30,38,22,49,46,1,-1,1,1,3,18,2
+Cowboys,Panthers,-19,54,68,60,48,1,-2,2,-1,4,-16,-2
+Rabbitohs,Bulldogs,4,68,56,50,84,0,-1,0,-1,4,28,2
+Sharks,Storm,10,44,44,74,42,-1,0,0,1,4,10,16
+Roosters,Warriors,-24,76,30,72,47,2,-1,1,2,4,30,1
+Sea Eagles,Raiders,16,78,53,75,80,1,-2,-2,-1,4,-28,-1
+Dragons,Knights,18,108,36,57,84,1,2,1,0,4,46,-30
+Broncos,Titans,-12,45,61,46,102,1,0,0,-1,4,2,-46
+Wests Tigers,Eels,10,27,25,18,92,0,1,-1,-2,4,-2,-10
+Raiders,Bulldogs,16,91,112,66,104,-2,-2,0,-2,5,-16,-4
+Sharks,Roosters,-18,58,48,82,60,0,0,1,-1,5,10,-24
+Dragons,Rabbitohs,4,138,48,88,72,2,2,1,-1,5,18,4
+Wests Tigers,Storm,1,57,45,78,56,1,1,0,0,5,10,-10
+Warriors,Cowboys,10,102,53,68,101,1,3,0,-2,5,24,-19
+Knights,Broncos,5,69,114,59,87,1,-1,0,0,5,-18,-12
+Titans,Sea Eagles,0,72,116,110,69,0,0,2,-2,5,12,16
+Eels,Panthers,0,38,122,93,62,-1,-3,2,0,5,-10,19
+Roosters,Rabbitohs,0,110,70,100,88,1,0,1,-2,6,18,-4
+Storm,Knights,0,88,67,84,124,0,-1,2,-1,6,-1,5
+Dragons,Sharks,0,154,60,68,76,3,2,-1,0,6,4,-18
+Warriors,Broncos,0,124,65,69,102,2,3,0,-1,6,10,-5
+Cowboys,Bulldogs,0,80,123,76,130,0,-3,0,-3,6,-10,-16
+Raiders,Eels,0,117,122,44,134,-1,-2,-2,-3,6,16,-6
+Panthers,Titans,0,105,68,104,136,2,1,1,0,6,6,12
+Sea Eagles,Wests Tigers,0,130,101,68,55,2,-3,2,1,6,-12,1
+Bulldogs,Roosters,-6,103,140,124,96,0,-2,0,0,7,17,-12
+Warriors,Dragons,8,142,92,194,80,1,3,4,2,7,-9,20
+Broncos,Storm,-14,96,120,128,81,0,0,1,-1,7,9,26
+Rabbitohs,Raiders,20,126,102,135,124,1,-1,0,-2,7,12,16
+Wests Tigers,Knights,-2,106,67,98,164,2,2,2,-2,7,26,-26
+Cowboys,Titans,12,90,150,116,171,-1,-3,1,-1,7,-17,-23
+Eels,Sea Eagles,34,46,152,142,139,-2,-4,1,-3,7,-16,-26
+Sharks,Panthers,4,88,116,140,80,-1,-1,3,1,7,-20,23
+Dragons,Roosters,16,206,100,130,96,4,1,0,1,8,-8,6
+Storm,Warriors,40,162,101,162,104,1,0,2,3,8,14,8
+Rabbitohs,Broncos,-4,168,124,116,154,2,-1,-1,0,8,20,-14
+Sea Eagles,Knights,-6,152,183,120,184,1,-4,2,-1,8,-34,2
+Panthers,Bulldogs,8,162,106,103,146,3,0,-1,-2,8,-4,-6
+Titans,Sharks,0,130,197,114,138,1,-2,0,-1,8,-12,4
+Cowboys,Raiders,0,116,164,157,166,0,-3,0,-3,8,12,-20
+Eels,Wests Tigers,0,90,162,126,89,-1,-4,1,2,8,34,-2
+Broncos,Bulldogs,2,140,174,117,168,-1,1,-1,-3,9,4,-8
+Knights,Rabbitohs,-18,138,196,188,148,2,0,1,-1,9,6,-4
+Panthers,Cowboys,-6,184,120,124,182,4,0,-1,-3,9,8,-10
+Raiders,Titans,14,175,174,139,207,0,-2,0,-2,9,10,-1
+Warriors,Wests Tigers,22,172,154,148,113,2,2,1,1,9,-40,-2
+Sharks,Eels,2,124,147,114,184,0,0,0,-4,9,1,2
+Dragons,Storm,20,230,108,212,111,5,1,2,0,9,16,40
+Roosters,Sea Eagles,2,138,120,164,201,0,0,0,-4,9,-16,-6
+Wests Tigers,Cowboys,8,152,139,150,202,1,0,-1,-2,10,-22,6
+Knights,Panthers,-11,156,232,204,146,1,0,3,0,10,-18,-6
+Bulldogs,Eels,8,137,190,134,206,-1,-4,0,-5,10,-2,-2
+Warriors,Roosters,-32,198,158,160,140,3,2,1,0,10,22,2
+Storm,Titans,14,226,145,157,239,2,-1,0,-3,10,-20,-14
+Sea Eagles,Broncos,14,184,223,162,194,0,-5,0,1,10,-2,2
+Rabbitohs,Dragons,0,224,166,264,122,1,0,6,1,10,18,20
+Raiders,Sharks,0,207,192,146,167,1,-2,1,0,10,14,2
+Panthers,Wests Tigers,0,233,164,172,151,3,1,2,0,11,11,8
+Eels,Warriors,0,146,226,198,190,0,-6,2,2,11,-8,-32
+Broncos,Roosters,0,186,232,192,140,0,0,1,1,11,-14,32
+Titans,Knights,0,171,267,174,261,0,-4,0,0,11,-14,-11
+Cowboys,Rabbitohs,0,162,222,248,176,-1,-3,2,0,11,-8,14
+Storm,Sea Eagles,0,254,159,222,247,3,-1,1,-5,11,14,14
+Dragons,Raiders,0,274,146,223,216,6,0,0,-2,11,-14,-8
+Sharks,Bulldogs,0,170,183,157,202,1,1,0,-4,11,8,8
+Broncos,Eels,0,214,254,160,250,1,0,-1,-6,12,6,-10
+Raiders,Sea Eagles,0,241,241,246,251,0,-3,1,-4,12,-7,20
+Cowboys,Storm,0,181,242,258,183,-2,-3,2,-1,12,-1,-20
+Roosters,Titans,0,214,168,204,293,1,0,1,-4,12,-6,7
+Warriors,Rabbitohs,0,222,204,268,195,2,3,2,1,12,10,1
+Panthers,Dragons,0,249,166,299,164,4,1,7,0,12,14,7
+Knights,Sharks,0,200,294,192,199,0,-1,2,1,12,-7,6
+Wests Tigers,Bulldogs,0,174,167,173,224,2,-1,0,-5,12,-14,-6
+Sea Eagles,Cowboys,-14,266,272,187,249,1,-5,-3,-3,13,-1,-1
+Rabbitohs,Sharks,8,298,205,240,209,2,2,2,2,13,20,38
+Eels,Knights,-26,170,268,210,342,-1,-7,-1,-1,13,-8,-38
+Roosters,Wests Tigers,2,248,182,188,177,2,0,3,-1,13,20,4
