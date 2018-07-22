@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.ML;
+using Microsoft.ML.Data;
+using Microsoft.ML.Models;
 using Microsoft.ML.Runtime.Api;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms;
@@ -9,35 +11,102 @@ namespace footytips
 {
     public class MachineLearning
     {
-        public PredictionModel<NrlResult, NrlPrediction> TrainData(string csvFilename)
+        public PredictionModel<NrlResult, ClusterPrediction> TrainData(IEnumerable<NrlResult> nrlResults)
         {
             var pipeline = new LearningPipeline
             {
-                new TextLoader<NrlResult>(csvFilename, true, ","),
+                CollectionDataSource.Create(nrlResults),
                 new Dictionarizer("Label"),
                 new ColumnConcatenator("Features", "PreviousWeeksHomeFor", "PreviousWeeksHomeAgainst",
                     "PreviousWeeksAwayFor", "PreviousWeeksAwayAgainst", "AwayTeamAwayForm", "AwayTeamHomeForm",
                     "HomeTeamAwayForm", "HomeTeamHomeForm", "HomeTeamLastWeekScore", "AwayTeamLastWeekScore"),
                 new StochasticDualCoordinateAscentClassifier(),
-                new PredictedLabelColumnOriginalValueConverter {PredictedLabelColumn = "PredictedLabel"}
+                //new KMeansPlusPlusClusterer { K = 3 },
+                //new FastTreeBinaryClassifier {NumLeaves = 5, NumTrees = 5, MinDocumentsInLeafs = 2},
+                
+                //new PredictedLabelColumnOriginalValueConverter {PredictedLabelColumn = "PredictedLabel"}
             };
 
 
-            return pipeline.Train<NrlResult, NrlPrediction>();
+            return pipeline.Train<NrlResult, ClusterPrediction>();
         }
 
 
-        public IEnumerable<NrlPrediction> Predict(List<NrlResult> roundData,
-            PredictionModel<NrlResult, NrlPrediction> training)
+        public IEnumerable<ClusterPrediction> Predict(IEnumerable<NrlResult> roundData,
+            PredictionModel<NrlResult, ClusterPrediction> training)
         {
             var predictions = training.Predict(roundData);
             return predictions;
         }
+
+        public void Evaluate(PredictionModel<NrlResult, ClusterPrediction> model,
+            IEnumerable<NrlResult> nrlResults)
+        {
+            var testData = CollectionDataSource.Create(nrlResults);
+
+            var evaluator = new BinaryClassificationEvaluator();
+
+            Console.WriteLine("=============== Evaluating model ===============");
+
+            var metrics = evaluator.Evaluate(model, testData);
+
+            Console.WriteLine($"Accuracy: {metrics.Accuracy:P2}");
+            Console.WriteLine($"Auc: {metrics.Auc:P2}");
+            Console.WriteLine($"F1Score: {metrics.F1Score:P2}");
+            Console.WriteLine("=============== End evaluating ===============");
+            Console.WriteLine();
+        }
+
+        public void Evaluate2(PredictionModel<NrlResult, ClusterPrediction> model,
+               IEnumerable<NrlResult> nrlResults)
+        {
+            var testData = CollectionDataSource.Create(nrlResults);
+            
+            // ClassificationEvaluator performs evaluation for Multiclass Classification type of ML problems.
+            var evaluator = new ClassificationEvaluator {OutputTopKAcc = 3};
+            
+            Console.WriteLine("=============== Evaluating model ===============");
+
+            var metrics = evaluator.Evaluate(model, testData);
+            Console.WriteLine("Metrics:");
+            Console.WriteLine($"    AccuracyMacro = {metrics.AccuracyMacro:0.####}, a value between 0 and 1, the closer to 1, the better");
+            Console.WriteLine($"    AccuracyMicro = {metrics.AccuracyMicro:0.####}, a value between 0 and 1, the closer to 1, the better");
+            Console.WriteLine($"    LogLoss = {metrics.LogLoss:0.####}, the closer to 0, the better");
+            Console.WriteLine($"    LogLoss for class 1 = {metrics.PerClassLogLoss[0]:0.####}, the closer to 0, the better");
+            Console.WriteLine($"    LogLoss for class 2 = {metrics.PerClassLogLoss[1]:0.####}, the closer to 0, the better");
+            //    Console.WriteLine($"    LogLoss for class 3 = {metrics.PerClassLogLoss[2]:0.####}, the closer to 0, the better");
+            Console.WriteLine();
+            Console.WriteLine($"    ConfusionMatrix:");
+
+            // Print confusion matrix
+            for (var i = 0; i < metrics.ConfusionMatrix.Order; i++)
+            {
+                for (var j = 0; j < metrics.ConfusionMatrix.ClassNames.Count; j++)
+                {
+                    Console.Write("\t" + metrics.ConfusionMatrix[i, j]);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("=============== End evaluating ===============");
+            Console.WriteLine();
+        }
     }
 
-    public class NrlPrediction
+
+    public class ClusterPrediction
     {
-        [ColumnName("PredictedLabel")] public float HomeTeamWin;
+        //        [ColumnName("PredictedLabel")]
+        //        public uint SelectedClusterId;
+        //
+        //        [ColumnName("Score")]
+        //        public float[] Distance;
+        //[ColumnName("PredictedLabel")] public bool HomeTeamWin;
+        
+        [ColumnName("Score")]
+        public float[] Score;
+
+        public string Winner => Score[0] > Score[1] ? "Home" : "Away";
     }
 
     public class NrlResult
@@ -64,6 +133,7 @@ namespace footytips
 
         [Column("11")] public float HomeTeamLastWeekScore;
         [Column("12")] public float AwayTeamLastWeekScore;
+        public int Round { get; set; }
     }
 
     public class NrlResult2
